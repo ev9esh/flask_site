@@ -17,7 +17,7 @@ app.config.from_object(__name__)
 
 @app.route('/')
 def index():
-    posts = [p for p in flatpages if p.path.startwish(POST_DIR)]
+    posts = [p for p in flatpages if p.path.startswith(POST_DIR)]
     posts.sort(key=lambda item: item['date'], reverse=True)
     return render_template('index.html', posts=posts, bigheader=True)
 
@@ -33,4 +33,4 @@ if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == 'build':
         freezer.freeze()
     else:
-        app.run(debug=True)
+        app.run(host='127.0.0.1', port=8000, debug=True)
