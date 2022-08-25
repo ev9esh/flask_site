@@ -1,0 +1,5 @@
+{"site_url":"http://localhost:8000",
+    "site_title": "Evgeny Shcheglov: Python разработчик",
+    "description": "Евгений Щеглов - портфолио, резюме и блог Python разработчика",
+    "keywords": "Веб-разработка на Python, бэкенд на Django и Flask",
+    }
