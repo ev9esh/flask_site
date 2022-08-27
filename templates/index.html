@@ -1,21 +1,19 @@
-<!--{% block content %}-->
-<!--<h2>Блог</h2>-->
-<!--    {% for post in posts %}-->
-<!--        <small>{{ post.date }}</small>-->
-<!--        <p>-->
-<!--        <h3>-->
-<!--        {{post.title}}-->
-<!--        </h3>-->
-<!--        <p>-->
-<!--            <i>{{ post.description }}</i>-->
-<!--        </p>-->
-<!--        <p>{{ post.html[:100]|safe }}</p>-->
-<!--        <a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}"><span>Читать</span></a>-->
-<!--        </p>-->
-<!--        {% endfor %}-->
-<!--{% endblock %}-->
-
-{% extends "base.html" %}
+<title>{{ title }}</title>
+  <meta content="{{ description }}" name="description">
+  <meta content="{{ keywords }}" name="keywords">
 {% block content %}
-<h1>Здесь будет сайт</h1>
+<h2>Блог</h2>
+            {% for post in posts %}
+        	<small>{{ post.date }}</small>
+        	<p>
+          	<h3>
+            	{{ post.title }}
+          	</h3>
+        	<p>
+          	<i>{{ post.description }}</i>
+        	</p>
+         	<p>{{ post.html[:100]|safe }}</p>
+            	<a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}"><span>Читать</span></a>
+        	</p>
+        	{% endfor %}
 {% endblock %}
